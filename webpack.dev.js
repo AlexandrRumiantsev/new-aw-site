@@ -8,16 +8,6 @@ const { merge } = require('webpack-merge')
 
 const fs = require('fs')
 
-
-
-const express = require('express'); //your original BE server
-const app = express();
-
-
-app.get("/hello", (req, res) => {
-  res.send("Hello World")
-})
-
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
@@ -27,12 +17,6 @@ module.exports = merge(common, {
       watch: true
     },    
     historyApiFallback: true,
-    proxy: {
-      '^/api/*': {
-        target: 'http://localhost:8080/api/',
-        secure: false
-      }
-    },
     port: 3000,
     server: {
       type: 'https',

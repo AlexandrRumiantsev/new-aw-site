@@ -1,31 +1,25 @@
-import { makeObservable, observable, action } from "mobx"
+//https://codesandbox.io/s/mobx-react-typescript-example-7qxp1?file=/src/stores/TodoStore.ts:0-1744
+
 import { GET_LIST } from "./actions"
 
-interface projectsStoreInterface{
-  projects: Object
-}
 
-export class projectsStore implements projectsStoreInterface {
 
-  projects = []
+export class ProjectsStore {
+
+  public list: [Object?] = []
   status = "pending" // "pending", "done" or "error"
 
-  constructor(value) {
+  constructor() {
     this.fetchProjects()
-    /*makeObservable(this, {
-        data: observable
-    })*/
   }
 
-  init() {
-     console.log("IIII")
-  }
-
-  @action
-  fetchProjects() {
-    console.log("fetchProjects")
-    GET_LIST()
-      //fetchGithubProjectsSomehow().then(this.projectsFetchSuccess, this.projectsFetchFailure)
+  public async fetchProjects() {
+    this.list = await GET_LIST()
+    if(this.list?.length > 0)
+       this.status = "done"
+    else 
+      this.status = "error"
   }
 
 }
+

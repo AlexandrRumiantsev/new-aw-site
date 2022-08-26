@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
-import { TEXT_COLOR_0_7_WHITE } from '~/globals'
+
 
 export const LoadingDiv = styled.div`
   display: flex;
   margin: auto;
 
-  background: ${TEXT_COLOR_0_7_WHITE};
+
   width: 20px;
   height: 20px;
   border-radius: 20px;

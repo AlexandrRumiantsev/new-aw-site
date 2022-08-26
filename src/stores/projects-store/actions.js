@@ -61,11 +61,12 @@ const responseBody = res => {
 
 export const GET_LIST = () => {
  
-  
-
-  fetch("/hello")
+  return fetch("http://api.alexweber.ru/wp-json/wp/v2/get_portfolio_all")
   .then((res) => {
-      console.log (res);
+    return res.json();
+  })
+  .then(function(data) {
+    return data;
   })
   .catch((err) => {
       console.log ('Error', err.message);

@@ -6,7 +6,8 @@
   "author": "Guilherme Rodrigues <guilospanck@protonmail.com>",
   "scripts": {
     "start": "NODE_ENV=production cd build/ && npx http-server --port 3000 -a localhost --proxy http://localhost:3000? .",
-    "start:dev": "NODE_ENV=development webpack serve --config webpack.dev.js",
+    "start:dev": "NODE_ENV=development webpack serve --config webpack.dev.js && node server/index.js",
+    "start:old": "NODE_ENV=production node_modules/react-scripts/bin/react-scripts.js start",
     "build": "webpack --config webpack.prod.js",
     "test": "jest --passWithNoTests --no-cache --runInBand",
     "test:watch": "yarn test -- --watch",
@@ -87,5 +88,17 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.3",
     "webpack-merge": "^5.8.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
