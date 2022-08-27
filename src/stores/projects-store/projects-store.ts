@@ -6,7 +6,7 @@ import { GET_LIST } from "./actions"
 
 export class ProjectsStore {
 
-  public list: [Object?] = []
+  public list: [{name: String, previmg: String}?] = []
   status = "pending" // "pending", "done" or "error"
 
   constructor() {

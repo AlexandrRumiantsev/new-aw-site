@@ -3,8 +3,6 @@ import { createRoot } from 'react-dom/client'
 import App from './App'
 import Loading from './components/Loading'
 import { GlobalStyle } from './globals'
-import {Provider} from "mobx-react";
-import { ProjectsStore } from "./stores/projects-store/projects-store";
 
 const container = document.getElementById('root')
 const root = createRoot(container)
