@@ -21,8 +21,8 @@ export const ProjectsWrapper = styled.div`
    align-items: center;
 `
 
-export const SlideImg = styled.img`
-  min-width: 606px;
+export const SlideImg = styled.img<any>`
+  width: 606px;
   height: fit-content;
   top: 37px;
 `
@@ -40,7 +40,6 @@ export const DisplayWrapper = styled.div<any>`
   margin: auto;
   display: flex;
   justify-content: flex-start;
-  overflow: hidden;
 `
 
 export const SliderCutter = styled.div<any>`
