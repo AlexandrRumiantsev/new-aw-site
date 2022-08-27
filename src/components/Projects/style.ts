@@ -13,7 +13,6 @@ export const DisplayImg = styled.div<any>`
 `
 
 export const ProjectsWrapper = styled.div`
-  height: 100vh;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -29,7 +28,6 @@ export const SlideImg = styled.img<any>`
 
 export const ImgContainer = styled.div`
   position: relative;
-  overflow: hidden;
 `
 
 export const DisplayWrapper = styled.div<any>`
@@ -47,4 +45,22 @@ export const SliderCutter = styled.div<any>`
   display: flex;
   height: 100%;
   width: 100%;
+`
+
+export const SwipeImg = styled.img<any>`
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  margin: 0 auto;
+  bottom: -65px;
+  animation: blink 2.5s infinite linear;
+  @-webkit-keyframes blink {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+  }
+  @keyframes blink {
+    0 {  transform: scale(1) }
+    50% { transform: scale(1.2) }
+    100% { transform: scale(1) }
+  }
 `
