@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react'
 import { RecoilRoot } from 'recoil'
-import Loading from './components/Loading'
+import Loading from './components/loading'
 
-import { AppRoute } from './Route'
+import { AppRoute } from './route'
 
 function App() {
   return (

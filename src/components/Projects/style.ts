@@ -64,3 +64,6 @@ export const SwipeImg = styled.img<any>`
     100% { transform: scale(1) }
   }
 `
+
+
+

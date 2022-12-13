@@ -3,36 +3,31 @@ import React from 'react'
 import Imgs from "../../assets/images/display.png";
 import Swipe from "../../assets/images/swipe.svg";
 
-import { useStores } from '../../utils/use-stores/use-stores'
 import { observer } from "mobx-react";
 import { SwipeImg, DisplayImg, ProjectsWrapper, SlideImg, ImgContainer, DisplayWrapper, SliderCutter } from "./style"
+import projectStore from '../../stores/project-store/project-store';
 
 import SwipeableViews from 'react-swipeable-views';
 
 export const Projects = observer(() => {
 
-  const { projects: {list, status} } = useStores()
-
   return <ProjectsWrapper>
     <h1>Проекты</h1>
     <ImgContainer>
-        <DisplayImg src={Imgs}>
-          <DisplayWrapper>
-           
-              <SliderCutter >
-                <SwipeableViews enableMouseEvents>
-                  {
-                    list.map(el => 
-                      <SlideImg src={`http://api.alexweber.ru/${el.previmg}`} />
-                    )
-                  }
-                </SwipeableViews>
-               
-              </SliderCutter>
-          
-          </DisplayWrapper>
-          <SwipeImg src={Swipe}/>
-        </DisplayImg>
+      <DisplayImg src={Imgs}>
+        <DisplayWrapper>
+            <SliderCutter >
+              <SwipeableViews enableMouseEvents>
+                {
+                  projectStore.list.map(el => 
+                    el.title
+                  )
+                }
+              </SwipeableViews>
+            </SliderCutter>
+        </DisplayWrapper>
+        <SwipeImg src={Swipe}/>
+      </DisplayImg>
     </ImgContainer>
   </ProjectsWrapper>
 })

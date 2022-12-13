@@ -53,7 +53,10 @@ export const ImgBox = styled.div`
 `
 
 export const TitleFIO = styled.img<any>`
-  background-image: url(${(props) => props.img});
+  font-size: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+
 `
 
 export const PictureStyled = styled.div<any>`
@@ -67,8 +70,6 @@ export const PictureStyled = styled.div<any>`
   background-repeat: no-repeat;
   float: right;
   position: relative;
-  border-bottom-left-radius: 200px;
-  border-bottom-right-radius: 200px;
 
   opacity: 0;
   animation: ani 5s forwards;

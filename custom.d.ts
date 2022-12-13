@@ -1,8 +1,15 @@
-declare module '*.svg' {
-  import { ReactElement, SVGProps } from 'react'
-  const content: (props: SVGProps<SVGElement>) => ReactElement
+// custom.d.ts on root /
+
+declare module '*.svg?inline' {
+  const content: any
   export default content
 }
+
+declare module '*.svg' {
+  const content: any
+  export default content
+}
+
 
 declare module '*.png';
 declare module '*.jpg';

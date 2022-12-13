@@ -1,16 +1,14 @@
 import React from "react";
 
 /** Views */
-import { HomeView } from './views';
+import { HomeView } from './components/index';
 
-/** ViewModels */
-import { useHomeViewModel } from "./viewModels/homeViewModel";
 
 /** Components */
-import Menu  from "../../components/Menu/"
+import Menu  from "../../components/menu/"
 
 const Home = () => {
-  const viewModel = useHomeViewModel();
+  //const viewModel = useHomeViewModel();
 
   return (
   	<>

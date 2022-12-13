@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App'
-import Loading from './components/Loading'
+import App from './app'
+import Loading from './components/loading'
 import { GlobalStyle } from './globals'
 
 const container = document.getElementById('root')

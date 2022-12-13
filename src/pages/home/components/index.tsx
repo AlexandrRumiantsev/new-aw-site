@@ -1,13 +1,12 @@
 import React from "react";
-import { UseHomeViewModelReturnType } from "../types";
 import  Imgs  from "../../../assets/images/main-photo.png";
-//import  Imgs2  from "../../../assets/text/fio.svg";
+import  Imgs2  from "../../../assets/text/fio.svg";
 import { AnyObject } from "yup/lib/types";
 import { ContainerStyled, PictureStyled, ImgBox, InfoBlock, TitleFIO, BaseFont, ScrollPageWrapper } from "./styles"
 
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
 import styled from "styled-components";
-import { Projects } from '../../../components/Projects/index'
+import { Projects } from '../../../components/projects/index'
 
 import { Observer } from 'mobx-react' // 6.x or mobx-react-lite@1.4.0
 
@@ -16,7 +15,6 @@ const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
 const FadeUp = batch(Fade(), Move(), Sticky());
 const FadeUpx = batch( MoveIn(), Zoom());
 
-import { GET_LIST } from '../../../stores/projects-store/actions'
 
 // Make custom animation
 const Spin = (cycle: number) =>
@@ -52,7 +50,7 @@ export function HomeView() {
       <ContainerStyled ref={myRef} id='main'>
         <InfoBlock>
           <h1 title="Заголовок страница">  
-            
+            <PictureStyled img={Imgs2}/>
           </h1>
           <h2>
           За последние 7 лет работал в качестве разработчика с сопровождающего програмные продукты работал с крупными компаниями и небольшими веб-студиями, помогая им в разработке проектов, разного уровня сложности.
@@ -105,4 +103,3 @@ export function HomeView() {
   </ScrollContainer>
   )
 }
-
